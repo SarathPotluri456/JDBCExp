@@ -4,9 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.util.Scanner;
-import java.util.concurrent.SynchronousQueue;
-
-import org.omg.Messaging.SyncScopeHelper;
 
 public class UserAddingDynamically {
 
@@ -22,6 +19,7 @@ public class UserAddingDynamically {
 			
 			do
 			{
+				
 				System.out.println("Enter Emp id:");
 				int id=sc.nextInt();
 				System.out.println("Enter Emp Name:");
@@ -32,21 +30,24 @@ public class UserAddingDynamically {
 				String addr=sc.next();
 				System.out.println("Enter Salary");
 				double salary=sc.nextDouble();
-				PreparedStatement ps=con.prepareStatement("insert into company values(?,?,?,?,?)");
+				PreparedStatement ps=con.prepareStatement("insert into COMPANY values(?,?,?,?,?)");
 				ps.setInt(1, id);
 				ps.setString(2, name);
 				ps.setInt(3, age);
 				ps.setString(4, addr);
 				ps.setDouble(5,salary);
 				ps.executeUpdate();
+				System.out.println("Record inserted Successfully");
 				System.out.println("Enter your Choice");
 				System.out.println("yes to continue");
 				System.out.println("No to Exit");
 				
 				x=sc.next();
 				
-			}while(x.startsWith("y"));
-			
+			}
+			while(x.startsWith("y"));
+			System.out.println("Exited Successfully");
+			con.close();
 		}catch(Exception e)
 		{
 			
