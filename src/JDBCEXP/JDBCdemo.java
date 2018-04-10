@@ -20,8 +20,8 @@ public class JDBCdemo {
         int c=stmt.executeUpdate("insert into emp values(123,'sdfj','.net')");
         System.out.println(c+" records added");
         ResultSet rs=stmt.executeQuery("select *from emp");
-		/*System.out.println("1 row is inserted");
-		System.out.println("Closing the Connection ");*/
+		System.out.println("1 row is inserted");
+		System.out.println("Closing the Connection ");
 		while(rs.next())
 		{
 			System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
