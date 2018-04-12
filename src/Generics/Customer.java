@@ -1,14 +1,16 @@
 package Generics;
 
-public class Customer<E > {
-	 E id;
+import java.util.ArrayList;
+
+public class Customer<E> {
+	E id;
 	
- String name;
+E name;
 	 public Customer() {
 			
 		}
-	public Customer(E id,String name) {
-		super();
+	public Customer(E id,	E name) {
+
 		this.id = id;
 		this.name = name;
 	}
@@ -16,6 +18,10 @@ public class Customer<E > {
 	@Override
 	public String toString() {
 		return "Customer [id=" + id + ", name=" + name + "]";
+	}
+	public void testGen(ArrayList <? super Number> list)
+	{
+		
 	}
 	 
 
